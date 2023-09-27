@@ -1,0 +1,50 @@
+﻿<Window x:Class="finalStore.Windows.SignUpForm"
+        xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        mc:Ignorable="d"
+        Title="Singup" Height="600" Width="1000"
+        AllowsTransparency="True" Background="Transparent"
+        WindowStyle="None"
+        MouseDown="Window_MouseDown"
+        WindowStartupLocation="CenterScreen">
+        
+    <Grid>
+        <Border Width="400" Margin="15" Background="White" VerticalAlignment="Center" Padding="40" CornerRadius="20">
+            <StackPanel>
+                <TextBlock HorizontalAlignment="Center">
+                    <materialDesign:PackIcon Kind="Account" 
+                                             Height="50" Width="50" 
+                                             Foreground="#0f3005"></materialDesign:PackIcon>
+                </TextBlock>
+
+                <TextBox x:Name="nameTextBox" 
+                         materialDesign:HintAssist.Hint="Enter Name" 
+                         Style="{StaticResource MaterialDesignFloatingHintTextBox}" FontSize="15"></TextBox>
+                <TextBox x:Name="lastNameTextBox" 
+                         materialDesign:HintAssist.Hint="Enter LastName" 
+                         Style="{StaticResource MaterialDesignFloatingHintTextBox}" FontSize="15"></TextBox>
+                <TextBox x:Name="emailTextBox" 
+                         materialDesign:HintAssist.Hint="Enter email" 
+                         Style="{StaticResource MaterialDesignFloatingHintTextBox}" FontSize="15"></TextBox>
+                <TextBox x:Name="phoneNumberTextBox" 
+                         materialDesign:HintAssist.Hint="Enter phonenumber" 
+                         Style="{StaticResource MaterialDesignFloatingHintTextBox}" FontSize="15"></TextBox>
+                <PasswordBox x:Name="passwordTextBox" 
+                             materialDesign:HintAssist.Hint="Enter password" 
+                             Style="{StaticResource MaterialDesignFloatingHintRevealPasswordBox}" FontSize="15"></PasswordBox>
+                <Button Content="Sign Up" 
+                        Click="SignUp_ClickAsync" Margin="0 15 0 0"></Button>
+                <Button Content="Close" 
+                        Click="Close_Click" Margin="0 15 0 0"></Button>
+                <TextBlock HorizontalAlignment="Center">
+                    <Hyperlink NavigateUri="https://example.com" RequestNavigate="BackToLoginClick" FontSize="15">
+                          <TextBlock Text="Back To Login"/>
+                    </Hyperlink>
+                </TextBlock>
+            </StackPanel>
+        </Border>
+    </Grid>
+</Window>

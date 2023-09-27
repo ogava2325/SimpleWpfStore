@@ -1,0 +1,43 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" 
+                    xmlns:system="clr-namespace:System;assembly=mscorlib">
+    
+    <!-- ALL WINDOWS-->
+    <!-- strings for choosing language-->
+    <system:String x:Key="MenuHeader">Мова</system:String>
+    <system:String x:Key="MenuUkranian">Українська</system:String>
+    <system:String x:Key="MenuEnglish">Англійська</system:String>
+
+    <!-- LOGIN AND SIGNUP WINDOWS -->
+    <!-- string for wpf contols -->
+    <system:String x:Key="EnterEmail">Введіть електронну пошту</system:String>
+    <system:String x:Key="EnterPassword">Введіть пароль</system:String>
+    <system:String x:Key="EnterName">Введіть ім'я</system:String>
+    <system:String x:Key="EnterLastName">Введіть призвіще</system:String>
+    <system:String x:Key="EnterPhoneNumber">Введіть номер телефону</system:String>
+    <system:String x:Key="SignUpButton">Зареєствуватися</system:String>
+    <system:String x:Key="SignInButton">Увійти</system:String>
+    <system:String x:Key="CloseButton">Закрити</system:String>
+    <system:String x:Key="ComfirmButton">Підтвердити</system:String>
+    <system:String x:Key="BackToLoginLink">Повернутися до входу</system:String>
+    <system:String x:Key="BackToSignupLink">Немає аккаунту?</system:String>
+    <system:String x:Key="AdminCheckBox">Ви адміністратор?</system:String>
+    <system:String x:Key="EnterConfirmationString">Введіть повідомлення отримане на пошту</system:String>
+
+    <!-- strings for message boxes -->
+    <system:String x:Key="EmptyFieldsMessage">Одне або більше полів пусті</system:String>
+    <system:String x:Key="InvalidEmailMessage">Неправильно введена пошта</system:String>
+
+    <!-- ADMIN WINDOW -->
+    <!-- strings for products tabItem-->
+    <system:String x:Key="TabHeaderProducts">Продукти</system:String>
+    <system:String x:Key="NameHeader">Назва</system:String>
+    <system:String x:Key="SupplierHeader">Постачальник</system:String>
+    <system:String x:Key="PriceHeader">Ціна</system:String>
+
+    <!-- strings for users tabItem-->
+
+    <!-- strings for orders tabItem-->
+
+    <!-- strings for admins tabItem-->
+</ResourceDictionary>

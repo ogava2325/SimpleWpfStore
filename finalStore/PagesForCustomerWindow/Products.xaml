@@ -1,0 +1,78 @@
+﻿<Page x:Class="finalStore.PagesForCustomerWindow.Products"
+      xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:finalStore.PagesForCustomerWindow"
+      mc:Ignorable="d" 
+      d:DesignHeight="700" d:DesignWidth="1080"
+      Title="Products">
+    <Border Background="White" CornerRadius="20" Padding="20">
+        <Grid Background="White">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="45"></RowDefinition>
+                <RowDefinition></RowDefinition>
+            </Grid.RowDefinitions>
+
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="100"></ColumnDefinition>
+                    <ColumnDefinition></ColumnDefinition>
+                    <ColumnDefinition Width="70"></ColumnDefinition>
+                    <ColumnDefinition Width="70"></ColumnDefinition>
+                    <ColumnDefinition Width="70"></ColumnDefinition>
+                </Grid.ColumnDefinitions>
+
+
+                <TextBox x:Name="searchBox"
+                 Grid.Column="1"
+                 materialDesign:HintAssist.Hint="{materialDesign:PackIcon Kind=Search }" 
+                 HorizontalAlignment="Center" Width="400"
+                 TextChanged="FilterDataGrid"></TextBox>
+
+                <Menu Grid.Column="3" HorizontalAlignment="Center">
+                    <MenuItem Header="{materialDesign:PackIcon Kind=Account, Size=20}" 
+                              HorizontalAlignment="Center">
+                        <MenuItem Header="Orders History" Click="OrdersHisotyItemClick"></MenuItem>
+                    </MenuItem>
+                </Menu>
+
+                <Button Grid.Column="2" HorizontalContentAlignment="Center" 
+                        Content="{materialDesign:PackIcon Kind=Cart, Size=20}" 
+                    Click="GoToCartPage"></Button>
+
+                <Button 
+                    HorizontalAlignment="Right"
+                    Grid.Column="4" Click="Close_Click" 
+                    Content="{materialDesign:PackIcon Kind=CloseBold, Size=20}" Width="52">
+                </Button>
+            </Grid>
+            <Frame x:Name="MainAdminWindow" Margin="0 45 0 0" NavigationUIVisibility="Hidden">
+    
+</Frame>
+            <Grid Grid.Row="1">
+                <DataGrid x:Name="productsDataGrid" 
+                      CanUserAddRows="False"
+                      Grid.Row="1"
+                      AutoGenerateColumns="False" 
+                      VerticalAlignment="Top" Height="620" 
+                      SelectionUnit="FullRow" SelectionMode="Single">
+                    <DataGrid.Columns>
+                        <DataGridTextColumn Header="#" IsReadOnly="True" CanUserResize="False" Width="auto" Binding="{Binding Id}"/>
+                        <DataGridTextColumn Header="Name" Binding="{Binding Name}" IsReadOnly="True" Width="*"/>
+                        <DataGridTextColumn Header="Supplier" Binding="{Binding Supplier}" IsReadOnly="True" Width="*"/>
+                        <DataGridTextColumn Header="Price" Binding="{Binding Price}" IsReadOnly="True" Width="*"/>
+                        <DataGridTemplateColumn>
+                            <DataGridTemplateColumn.CellTemplate>
+                                <DataTemplate>
+                                    <Button Click="AddToCart" Content="Add to the cart"></Button>
+                                </DataTemplate>
+                            </DataGridTemplateColumn.CellTemplate>
+                        </DataGridTemplateColumn>
+                    </DataGrid.Columns>
+                </DataGrid>
+            </Grid>
+        </Grid>
+    </Border>
+</Page>

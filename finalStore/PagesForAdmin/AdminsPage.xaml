@@ -1,0 +1,95 @@
+﻿<Page x:Class="finalStore.PagesForAdmin.AdminsPage"
+      xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:finalStore.PagesForAdmin"
+      mc:Ignorable="d" 
+      d:DesignHeight="600" d:DesignWidth="800"
+      Title="AdminsPage">
+
+    <Grid Background="White">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="30"></RowDefinition>
+            <RowDefinition Height="450"></RowDefinition>
+            <RowDefinition></RowDefinition>
+        </Grid.RowDefinitions>
+
+        <TextBox x:Name="searchBox"
+                 Grid.Row="0"
+                 materialDesign:HintAssist.Hint="{materialDesign:PackIcon Kind=Search}" 
+                 HorizontalAlignment="Right" Width="300" Margin="0 2 5 2"
+                 TextChanged="FilterDataGrid"></TextBox>
+
+        <DataGrid x:Name="adminsDataGrid" 
+                  Grid.Row="1"
+                  AutoGenerateColumns="False" 
+                  VerticalAlignment="Top" Height="450" 
+                  SelectionUnit="FullRow" SelectionMode="Single"
+                  MouseDoubleClick="Row_MouseDoubleClick">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="#" IsReadOnly="True" CanUserResize="False" Width="auto" Binding="{Binding Id}"/>
+                <DataGridTextColumn Header="Name" Binding="{Binding Name}" IsReadOnly="True" Width="*"/>
+                <DataGridTextColumn Header="LastName" Binding="{Binding LastName}" IsReadOnly="True" Width="*"/>
+                <DataGridTextColumn Header="Email" Binding="{Binding Email}" IsReadOnly="True" Width="*"/>
+                <DataGridTextColumn Header="Password" Binding="{Binding Password}" IsReadOnly="True" Width="*"/>
+                <DataGridTextColumn Header="Phone" Binding="{Binding Phonenumber}" IsReadOnly="True" Width="*"/>
+            </DataGrid.Columns>
+        </DataGrid>
+        <DockPanel VerticalAlignment="Bottom" Grid.Row="3">
+            <Grid DockPanel.Dock="Top" Margin="5">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition></ColumnDefinition>
+                    <ColumnDefinition></ColumnDefinition>
+                    <ColumnDefinition></ColumnDefinition>
+                    <ColumnDefinition></ColumnDefinition>
+                    <ColumnDefinition></ColumnDefinition>
+                    <ColumnDefinition></ColumnDefinition>
+                </Grid.ColumnDefinitions>
+                <Button Grid.Column="0" Content="Add" Click="Add_Click" Margin="5"></Button>
+                <TextBox x:Name="AddAdminName" Grid.Column="1" 
+                         materialDesign:HintAssist.Hint="Name"
+                         Margin="2"></TextBox>
+                <TextBox x:Name="AddAdminLastName" Grid.Column="2" 
+                         materialDesign:HintAssist.Hint="Last Name"
+                         Margin="2"></TextBox>
+                <TextBox x:Name="AddAdminEmail" Grid.Column="3" 
+                         materialDesign:HintAssist.Hint="Email"
+                         Margin="2"></TextBox>
+                <TextBox x:Name="AddAdminPassword" Grid.Column="4" 
+                         materialDesign:HintAssist.Hint="Password"
+                         Margin="2"></TextBox>
+                <TextBox x:Name="AddAdminPhoneNumber" Grid.Column="5" 
+                         materialDesign:HintAssist.Hint="PhoneNumber"
+                         Margin="2"></TextBox>
+            </Grid>
+            <Grid DockPanel.Dock="Bottom" Margin="5">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition></ColumnDefinition>
+                    <ColumnDefinition></ColumnDefinition>
+                    <ColumnDefinition></ColumnDefinition>
+                    <ColumnDefinition></ColumnDefinition>
+                    <ColumnDefinition></ColumnDefinition>
+                    <ColumnDefinition></ColumnDefinition>
+                </Grid.ColumnDefinitions>
+                <Button Grid.Column="0" Content="Update" Click="Update_Click" Margin="5"></Button>
+                <TextBox x:Name="UpdateAdminName" Grid.Column="1" 
+                         materialDesign:HintAssist.Hint="Name"
+                         Margin="2"></TextBox>
+                <TextBox x:Name="UpdateAdminLastName" Grid.Column="2" 
+                         materialDesign:HintAssist.Hint="Last Name"
+                         Margin="2"></TextBox>
+                <TextBox x:Name="UpdateAdminEmail" Grid.Column="3" 
+                         materialDesign:HintAssist.Hint="Email"
+                         Margin="2"></TextBox>
+                <TextBox x:Name="UpdateAdminPassword" Grid.Column="4" 
+                         materialDesign:HintAssist.Hint="Password"
+                         Margin="2"></TextBox>
+                <TextBox x:Name="UpdateAdminPhoneNumber" Grid.Column="5" 
+                         materialDesign:HintAssist.Hint="PhoneNumber"
+                         Margin="2"></TextBox>
+            </Grid>
+        </DockPanel>
+    </Grid>
+</Page>
